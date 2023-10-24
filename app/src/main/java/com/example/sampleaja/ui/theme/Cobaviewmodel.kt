@@ -1,10 +1,10 @@
 package com.example.sampleaja.ui.theme
 
-import Data.DataForm
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.sampleaja.Data.DataForm
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,13 +17,16 @@ class CobaViewModel : ViewModel() {
         private set
     var jenisKl: String by mutableStateOf("")
         private set
+    var alamat: String by mutableStateOf("")
+        private set
     private val _uiState = MutableStateFlow(DataForm())
     val uiState: StateFlow<DataForm> = _uiState.asStateFlow()
 
-    fun insertData(nm: String, tlp:String, jk: String){
+    fun insertData(nm: String, tlp:String, jk: String, al: String){
         namaUsr = nm;
         noTlp = tlp;
         jenisKl = jk;
+        alamat = al;
     }
 
     fun setJenisK(pilihJK: String){
