@@ -19,14 +19,17 @@ class CobaViewModel : ViewModel() {
         private set
     var alamat: String by mutableStateOf("")
         private set
+    var status: String by mutableStateOf("")
+        private set
     private val _uiState = MutableStateFlow(DataForm())
     val uiState: StateFlow<DataForm> = _uiState.asStateFlow()
 
-    fun insertData(nm: String, tlp:String, jk: String, al: String){
+    fun insertData(nm: String, tlp:String, jk: String, al: String, st: String){
         namaUsr = nm;
         noTlp = tlp;
         jenisKl = jk;
         alamat = al;
+        status= st;
     }
 
     fun setJenisK(pilihJK: String){
